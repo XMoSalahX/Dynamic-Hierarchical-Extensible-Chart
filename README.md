@@ -1,4 +1,4 @@
-# Web Dynamic Hierarchical Extensible Chart 
+# Dynamic Hierarchical Extensible Chart 
 
 Web dynamic hierarchical extensible chart satisfying the following conditions:
 
