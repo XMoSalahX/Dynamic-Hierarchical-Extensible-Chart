@@ -1,0 +1,174 @@
+openapi: 3.0.3
+info:
+  title: Cehma Chart
+  description: Cehma Chart is a web dynamic hierarchical extensible chart .
+  version: 1.0
+  contact:
+    email: mohammedsalah6055@gmail.com
+  servers:
+    -url: http://localhost:8003
+    description: THis is my local Server
+
+schemes: [https, http]
+
+# Endpoints
+paths:
+  /allData:
+    get:
+      summary: To git chart object
+      tags: [Chart Endpoints]
+      responses:
+        200:
+          description: Success
+        500:
+          description: Internal server error
+
+  /insertNode:
+    post:
+      summary: To insert root or Node, look at the examples.
+      tags: [Chart Endpoints]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - title
+                - shape
+                - txColor
+                - child
+                - Parent_id
+                - bgColor
+              properties:
+                title:
+                  type: string
+                shape:
+                  type: string
+                bgColor: string
+                txColor: string
+                child: array
+                Parent_id: string
+              example:
+                title: "React JS"
+                shape: "square"
+                child: []
+                Parent_id: "a0d14e77-6a23-4c07-b865-9ee37303f750"
+                bgColor: string
+                txColor: string
+            examples:
+              Create Root:
+                value:
+                  title: "React JS"
+                  shape: "square"
+                  child: []
+                  bgColor: red
+                  txColor: white
+              Create Node:
+                value:
+                  title: "React JS"
+                  shape: "square"
+                  child: []
+                  Parent_id: "a0d14e77-6a23-4c07-b865-9ee37303f750"
+                  bgColor: red
+                  txColor: white
+      responses:
+        200:
+          description: Success.
+        500:
+          description: Internal server error
+
+  # Forget request
+  /nodeupdate:
+    put:
+      summary: To update our nodes
+      tags: [Chart Endpoints]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - _id
+                - title
+                - shape
+                - txColor
+                - bgColor
+
+              properties:
+                _id:
+                  type: string
+                title:
+                  type: string
+                shape:
+                  type: string
+                txColor:
+                  type: string
+                bgColor:
+                  type: string
+                Parent_id:
+                  type: string
+              example:
+                _id: "f411ceaa-3857-458f-ba1b-57c8d7a8a622"
+                title: "Full-Stack"
+                shape: "Circle"
+                txColor: "red"
+                bgColor: "white"
+                Parent_id: "f411ceaa-3857-458f-ba1b-57c8d7a8a622"
+      responses:
+        200:
+          description: update successfully.
+        500:
+          description: Internal server error
+
+  /deletenode:
+    post:
+      summary: To Delete Node.
+      tags: [Chart Endpoints]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - _id
+              properties:
+                _id:
+                  type: string
+              example:
+                _id: "bf696676-684b-4d25-9e96-f9288a8329f7"
+      responses:
+        200:
+          description: Success found it.
+        409:
+          description: Conflict.
+        500:
+          description: Internal server error
+
+  /movenodes:
+    put:
+      summary: To drag and dorp for Node.
+      tags: [Chart Endpoints]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - _id
+                - Parent_id
+              properties:
+                _id:
+                  type: string
+                Parent_id: string
+              example:
+                _id: "f411ceaa-3857-458f-ba1b-57c8d7a8a622"
+                Parent_id: "a0d14e77-6a23-4c07-b865-9ee37303f750"
+      responses:
+        200:
+          description: Success.
+        500:
+          description: Internal server error.

@@ -1,0 +1,136 @@
+.nodeControlerContainer {
+  height: 450px;
+  width: 40%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10%;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+@media (max-width: 1080px) {
+  .nodeControlerContainer {
+    width: 60%;
+  }
+}
+
+label {
+  font-size: 16px;
+}
+
+input {
+  width: 100%;
+  height: 33px;
+}
+
+input[id="title"] {
+  margin-bottom: 20px;
+}
+
+input[name="shape"] {
+  width: 25px;
+}
+
+label[htmlFor="shape"] {
+  display: block;
+  margin-top: 10px;
+}
+
+.rad {
+  display: flex;
+  align-items: center;
+  accent-color: #470348;
+}
+
+.radContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.creatbtn {
+  background-color: #49c549;
+  box-shadow: 0px 9px 35px 3px #90ee90;
+}
+
+.btn {
+  font-family: "cairo";
+  margin-top: 20px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: white;
+}
+
+.creatbtn:hover {
+  background-color: #17e917;
+}
+
+.close {
+  width: 30px;
+  height: 30px;
+  background: #cf1742b8;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: #ff003cb8;
+}
+
+.close:before {
+  content: "";
+  width: 3px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 5px;
+}
+
+.close:after {
+  content: "";
+  width: 3px;
+  height: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  border-radius: 5px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.edit {
+  background: #3ea5cd;
+  color: white;
+  box-shadow: 0px 9px 35px 3px #3ea5cd66;
+}
+
+.remove {
+  background: #cf1742b8;
+  color: white;
+  box-shadow: 0px 9px 35px 3px #cf174266;
+}
+
+.remove:hover {
+  background-color: #ff003cb8;
+}
+
+.edit:hover {
+  curser: pointer;
+  background: #00b8ff;
+}

@@ -1,0 +1,34 @@
+.startStyle {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #b379ad;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: 2s;
+}
+.startStyle:hover {
+  background-color: #2d032e;
+}
+
+.startStyle:before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px #9536a5ba dashed;
+  transition-duration: 5s;
+}
+
+.startStyle:hover:before {
+  transform: rotate(360deg);
+  border-width: 8px;
+}

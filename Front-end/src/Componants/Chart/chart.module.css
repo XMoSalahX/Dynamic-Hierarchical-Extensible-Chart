@@ -1,0 +1,30 @@
+.margin_top {
+  margin-top: 50px;
+  curser: pointer;
+  cursor: pointer;
+}
+
+.node {
+  width: auto;
+  display: inline-grid;
+  place-items: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.square {
+  display: inline-grid;
+  place-items: center;
+  padding: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.circle {
+  width: auto;
+  border-radius: 50%;
+  display: inline-grid;
+  place-items: center;
+  padding: 20px;
+  cursor: pointer;
+}
