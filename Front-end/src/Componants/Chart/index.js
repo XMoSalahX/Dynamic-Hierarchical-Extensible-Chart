@@ -127,7 +127,7 @@ export default function Chart({ chartData }) {
                     ? styles.circle
                     : el.shape === "Square"
                     ? styles.square
-                    : null
+                    : styles.rectangle
                 } `}
               >
                 {el.title}
