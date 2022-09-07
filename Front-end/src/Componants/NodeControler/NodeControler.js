@@ -43,9 +43,8 @@ export default function NodeControler() {
       } else {
         title.placeholder = "Field is empty";
       }
-    } catch {
-      title.value = "";
-      title.placeholder = "Please choose the shape of the Node";
+    } catch (err) {
+      document.querySelector("span").style.display = "inline-block";
     }
   }
 
@@ -74,8 +73,7 @@ export default function NodeControler() {
         title.placeholder = "Field is empty";
       }
     } catch (err) {
-      title.value = "";
-      title.placeholder = "Please choose the shape of the Node";
+      document.querySelector("span").style.display = "inline-block";
     }
   }
 
@@ -107,6 +105,7 @@ export default function NodeControler() {
         <label htmlFor="title">Enter Node Title: </label>
         <input id="title" type="text" required></input>
         <label htmlFor="shape">Select Shape: </label>
+        <span className={styles.shapeError}>* Require</span>
         <div className={styles.radContainer}>
           <div className={styles.rad}>
             <input type="radio" name="shape" value="Square" />

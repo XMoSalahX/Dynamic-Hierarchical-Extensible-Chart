@@ -134,3 +134,9 @@ label[htmlFor="shape"] {
   curser: pointer;
   background: #00b8ff;
 }
+
+.shapeError {
+  display: none;
+  color: red;
+  font-size: 14px;
+}
