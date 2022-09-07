@@ -155,7 +155,11 @@ export default function Chart({ chartData }) {
           <div
             id={"id-" + chartData[0]._id}
             className={`${styles.margin_top} ${styles.node}   ${
-              chartData[0].shape === "Circle" ? styles.circle : null
+              chartData[0].shape === "Circle"
+                ? styles.circle
+                : chartData[0].shape === "Square"
+                ? styles.square
+                : styles.rectangle
             }`}
             style={{
               backgroundColor: chartData[0].bgColor,
