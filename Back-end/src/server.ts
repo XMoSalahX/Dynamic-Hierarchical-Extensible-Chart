@@ -17,10 +17,7 @@ app.listen(config.server.port, function () {
 
 // Connection To Mongo DB
 mongoose
-  .connect(
-    `mongodb+srv://${config.mongo.user}:${config.mongo.pass}@chart.8q0ltvw.mongodb.net/?retryWrites=true&w=majority`,
-    { dbName: config.mongo.dbName }
-  )
+  .connect(`${config.mongo.url}`, { dbName: config.mongo.dbName })
   .then(() => {
     console.log("MongoDB is Connnected");
   })
