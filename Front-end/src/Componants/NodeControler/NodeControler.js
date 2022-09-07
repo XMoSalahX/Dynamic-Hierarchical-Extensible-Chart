@@ -16,6 +16,7 @@ export default function NodeControler() {
   }
 
   let data = {};
+  const title = document.querySelector('input[type="text"]');
 
   // to Submit Root or Child Function
   async function submit() {
@@ -28,18 +29,23 @@ export default function NodeControler() {
         child: [],
         Parent_id: id,
       };
-      await fetch(`${config.server}/insertNode`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }).then(() => {
-        window.location.href = "/";
-      });
+
+      if (data.title !== "") {
+        await fetch(`${config.server}/insertNode`, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }).then(() => {
+          window.location.href = "/";
+        });
+      } else {
+        title.placeholder = "Field is empty";
+      }
     } catch {
-      //The code will be written in it later
-      // Now For Error Handeling
+      title.value = "";
+      title.placeholder = "Please choose the shape of the Node";
     }
   }
 
@@ -54,40 +60,39 @@ export default function NodeControler() {
         txColor: document.querySelector("#txColor").value,
         Parent_id: Parent_id,
       };
-      await fetch(`${config.server}/nodeupdate`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }).then(() => {
-        window.location.href = "/";
-      });
+      if (data.title !== "") {
+        await fetch(`${config.server}/nodeupdate`, {
+          method: "PUT",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }).then(() => {
+          window.location.href = "/";
+        });
+      } else {
+        title.placeholder = "Field is empty";
+      }
     } catch (err) {
-      //The code will be written in it later
-      // Now For Error Handeling
+      title.value = "";
+      title.placeholder = "Please choose the shape of the Node";
     }
   }
 
   // To Remove Root or Node Function
   async function remove() {
-    try {
-      data = {
-        _id: id,
-      };
-      await fetch(`${config.server}/deletenode`, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      }).then(() => {
-        window.location.href = "/";
-      });
-    } catch (err) {
-      //The code will be written in it later
-      // Now For Error Handeling
-    }
+    data = {
+      _id: id,
+    };
+    await fetch(`${config.server}/deletenode`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then(() => {
+      window.location.href = "/";
+    });
   }
 
   // Bulding our Form
