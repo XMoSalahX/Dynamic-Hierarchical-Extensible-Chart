@@ -2,6 +2,7 @@ import styles from "./nodeControler.module.css";
 import OverLay from "../OverLay/OverLay";
 import { useLocation, useNavigate } from "react-router-dom";
 import { config } from "../../config/config";
+import { useEffect } from "react";
 
 // Node Controler Funcion is used in {(CREATE & EDIT & REMOVE): [ROOT,Child]}
 export default function NodeControler() {
@@ -16,8 +17,10 @@ export default function NodeControler() {
   }
 
   let data = {};
-  const title = document.querySelector('input[type="text"]');
 
+  useEffect(() => {
+    document.querySelector("#title").value = "";
+  });
   // to Submit Root or Child Function
   async function submit() {
     try {
@@ -41,7 +44,7 @@ export default function NodeControler() {
           window.location.href = "/";
         });
       } else {
-        title.placeholder = "Field is empty";
+        document.querySelector("#title").placeholder = "Field is Empty";
       }
     } catch (err) {
       document.querySelector("span").style.display = "inline-block";
@@ -70,7 +73,7 @@ export default function NodeControler() {
           window.location.href = "/";
         });
       } else {
-        title.placeholder = "Field is empty";
+        document.querySelector("#title").placeholder = "Field is Empty";
       }
     } catch (err) {
       document.querySelector("span").style.display = "inline-block";
