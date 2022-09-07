@@ -10,14 +10,14 @@
 
 ### You need to add .env in root
 
-MONGO_USER="MohammedSalah"
-MONGO_PASSWORD="Mohammed123"
-SERVER_PORT="8003"
-ENV=dev
-PORT=8003
-API="http://localhost:8003"
-DBNAME="CehmaChart"
-FRONT_URL="http://localhost:3000"
+MONGO_USER="MohammedSalah"  
+MONGO_PASSWORD="Mohammed123"  
+SERVER_PORT="8003"  
+ENV=dev  
+PORT=8003  
+API="http://localhost:8003"  
+DBNAME="CehmaChart"  
+FRONT_URL="http://localhost:3000"  
 
 ---
 
