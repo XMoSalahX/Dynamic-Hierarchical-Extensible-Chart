@@ -16,6 +16,13 @@
   }
 }
 
+@media (max-width: 600px) {
+  .nodeControlerContainer {
+    width: 80%;
+    height: auto;
+  }
+}
+
 label {
   font-size: 16px;
 }
@@ -65,6 +72,12 @@ label[htmlFor="shape"] {
   letter-spacing: 1px;
   cursor: pointer;
   color: white;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 90px;
+  }
 }
 
 .creatbtn:hover {
