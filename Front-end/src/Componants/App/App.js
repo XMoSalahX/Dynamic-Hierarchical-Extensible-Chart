@@ -12,13 +12,14 @@ function App() {
   const [chart, setChart] = useState([]);
   useEffect(() => {
     const ChartFromServer = async () => {
-      const response = await fetch(`${config.server}/alldata`, {
-        method: "GET",
-      });
-      let data = await response.json();
-
       // To Request our Data One time iF we don't have
       if (chart.length === 0) {
+        const response = await fetch(`${config.server}/alldata`, {
+          method: "GET",
+        });
+
+        let data = await response.json();
+
         setChart(data);
       }
     };
